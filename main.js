@@ -5,6 +5,8 @@ alert("Saludos desde " + country + ", tenga una buena noche");
 let numero = Number(prompt("Escribe un número"));
 if (numero > 1000) {
   alert("Es mayor que 1000");
+} else {
+  alert("Es menor que 1000");
 }
 let text = prompt("Saludame");
 if ((text = "Hola")) {
