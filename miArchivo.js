@@ -95,8 +95,102 @@ while (entrada != "ESC") {
  */
 
 //Reto
-let repeticiones = Number(prompt("Ingresa un número"));
+/* let repeticiones = Number(prompt("Ingresa un número"));
 
 for (let i = 1; i <= repeticiones; i++) {
   console.log("Hola");
 }
+ */
+
+//Variables locales y globales
+
+//Locales: son variables que se declaran en la funcion, si se declara por fuera JS la toma como una variable no declarada
+/* function sumar(){
+  let resultado = primerNumero + segundoNumero;
+} */
+
+//Globales: Se declaran fuera de la función y se pueden usar fuera de ella
+/* let resultado = 0;
+function sumarNumeros(primerNumero, segundoNumero){
+  resultado = primerNumero + segundoNumero;
+}
+sumarNumeros(2,4)
+
+console.log(resultado) */
+
+//Funciones anonimas
+/* const sumar = function (numero1, numero2) {
+  return numero1 + numero2;
+};
+console.log(sumar(3, 5)); */
+
+//Funciones flecha
+/* const sumar = (numero1, numero2) => {
+  return numero1 + numero2;
+};
+console.log(sumar(3, 5));
+ */
+
+//Desafío
+let precio = 0;
+let descuento = 0;
+let precioInicial = 0;
+let costoEnvio = 0;
+let producto = prompt("¿Que prefieres?, Zapatos o una consola").toUpperCase();
+switch (producto) {
+  case "ZAPATOS":
+    precio = 200;
+    precioInicial = 200;
+    break;
+  case "CONSOLA":
+    precio = 700;
+    precioInicial = 700;
+    break;
+  default:
+    alert("No se ha podido recibir tu respuesta");
+    break;
+}
+let affiliate = confirm("Eres afiliado?");
+switch (affiliate) {
+  case true:
+    descuento = 50;
+    break;
+  case false:
+    descuento = 70;
+    break;
+  default:
+    alert("¿Perdón?, no se ha podido recibir tu respuesta");
+}
+let envio = confirm("¿Te lo enviamos nosotros?, tendrá un costo adicional");
+switch (envio) {
+  case true:
+    costoEnvio = 10;
+    break;
+  case false:
+    costoEnvio = 0;
+    break;
+  default:
+    alert("¿Perdón?, no se ha podido recibir tu respuesta");
+    break;
+}
+const precioTotal = (objeto, descuento, envio) => {
+  precio = (objeto * descuento) / 100 + envio;
+  alert(
+    "Listo, tu precio total es de " +
+      precio +
+      " te enviaremos un recibo por la consola"
+  );
+  console.log(
+    "Producto: " +
+      producto +
+      "; Precio del producto: " +
+      precioInicial +
+      ", Descuento: " +
+      descuento +
+      "%, Costo de envío?: " +
+      envio +
+      ", Precio total: " +
+      precio
+  );
+};
+console.log(precioTotal(precio, descuento, costoEnvio));
